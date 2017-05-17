@@ -1,0 +1,84 @@
+/*Para utilizar adecuadamente rem, establecimos un
+font-size de 16px */
+html{
+  font-size: 16px;
+}
+body{
+	background: #000;
+
+}
+
+/*Esto formara un circulo blanco, y sobre este agregaremos
+los demas elementos que formaran a la pokebola*/
+.pokebola{
+	width: 10rem;
+	height: 10rem;
+	background: #FFF;
+	border-radius: 50%;
+}
+
+
+/*El selector before lo utilizamos para establecer
+propiedades que estaran antes del contenido del elemento
+seleccionado*/
+.pokebola::before{
+
+/*before lo utilizamos junto con content, para que se 
+muestren las propiedades que estamos aplicando*/
+    content: '';
+    width: 10rem;
+
+    /*Aplicamos un height de 5rem, pues esta sera la parte
+    superior de la pokebola*/
+    height: 5rem;
+
+    /*Fondo de color rojo*/
+    background: #FF1C1C;
+
+    /*Aqui hacemos que las esquinas superirores sean
+    redondeadas*/
+    border-radius: 5rem 5rem 0 0;
+    position: absolute;
+}
+
+
+/*Esta sera la barra que separe la parte superior, de la
+inferior de nuestra pokebola*/
+.detalle{
+	width: 10rem;
+	height: 0.5rem;
+	background: #333;
+	margin-top: 4.8rem;
+	position: absolute;
+
+}
+
+
+/*Aqui utilizaremos los pseudo elementos, after y before*/
+.detalle::before{
+	content: '';  
+	width: 3rem;
+	height: 3rem;
+	background: #333;	
+	border-radius: 50%;
+	position: absolute;
+
+	/*Utilizamos margin-top, y margin-left, para
+	posicionarlo en el centro de la pokebola*/
+	margin-top: -1.1rem;
+	margin-left: 3.5rem;
+}
+
+.detalle::after{
+	content: '';
+	width: 1.8rem; 
+	height: 1.8rem;
+
+  /*El fondo blanco, del circulo o centro de la pokebola*/
+   background: #FFF;
+
+   border-radius: 50%;
+   margin-top: -0.5rem;
+   margin-left: 4.1rem;
+   position: absolute;
+}
